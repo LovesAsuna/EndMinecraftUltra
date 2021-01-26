@@ -141,7 +141,7 @@ public class DistributedBotAttack extends IAttack{
                 try {
                     String[] _p=p.split(":");
                     ProxyInfo proxyInfo=new ProxyInfo(ProxyInfo.Type.HTTP,new InetSocketAddress(_p[0],Integer.parseInt(_p[1])));
-                    Client client=createClient(ip, port,mainUtils.getRandomString(4,12), proxyInfo);
+                    Client client=createClient(ip, port, Config.instance.getRandUsername(), proxyInfo);
                     client.getSession().setReadTimeout(10*1000);
                     client.getSession().setWriteTimeout(10*1000);
                     synchronized (clients) {
